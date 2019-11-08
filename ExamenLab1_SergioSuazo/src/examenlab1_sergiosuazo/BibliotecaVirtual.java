@@ -8,6 +8,7 @@ package examenlab1_sergiosuazo;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -51,12 +52,18 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         libros.add(v);
         jt_panel.setEnabled(login);
         DefaultComboBoxModel dc= (DefaultComboBoxModel) cb_libros.getModel();
+        DefaultComboBoxModel cb= (DefaultComboBoxModel) cb_libros1.getModel();
         dc.addElement(x);
         dc.addElement(y);
         dc.addElement(z);
         dc.addElement(w);
         dc.addElement(v);
-        
+        cb.addElement(x);
+        cb.addElement(y);
+        cb.addElement(z);
+        cb.addElement(w);
+        cb.addElement(v);
+        cb_libros1.setModel(cb);
         cb_libros.setModel(dc);
     }
 
@@ -69,6 +76,21 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        tf_usuarioN = new javax.swing.JTextField();
+        tf_contraN = new javax.swing.JTextField();
+        jd_fechaN = new com.toedter.calendar.JDateChooser();
+        jt_telefonoN = new javax.swing.JTextField();
+        tf_correoN = new javax.swing.JTextField();
+        cb_generoF = new javax.swing.JComboBox<>();
+        jButton3 = new javax.swing.JButton();
         jt_panel = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -76,6 +98,8 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         pf_contraseña = new javax.swing.JPasswordField();
         bt_login = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         tf_titulo = new javax.swing.JTextField();
@@ -99,14 +123,106 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_tabla1 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        bt_modificar = new javax.swing.JButton();
+        bt_eliminar = new javax.swing.JButton();
+        cb_libros1 = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jl_favoritos = new javax.swing.JList<>();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jt_buscar = new javax.swing.JTable();
         cb_libros = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+
+        jLabel14.setText("Nuevo Usuario");
+
+        jLabel15.setText("Usuario");
+
+        jLabel16.setText("Contraseña");
+
+        jLabel17.setText("Fecha de nacimiento");
+
+        jLabel18.setText("Telefono");
+
+        jLabel19.setText("Correo");
+
+        jLabel20.setText("Genero favorito");
+
+        cb_generoF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fantasia", "Accion", "Romance", "Historia" }));
+
+        jButton3.setText("Crear Usuario");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(jLabel14))
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20))
+                        .addGap(51, 51, 51)
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_usuarioN)
+                            .addComponent(tf_contraN)
+                            .addComponent(jd_fechaN, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                            .addComponent(jt_telefonoN)
+                            .addComponent(tf_correoN)
+                            .addComponent(cb_generoF, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jButton3)))
+                .addContainerGap(86, Short.MAX_VALUE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(27, 27, 27)
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(tf_usuarioN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(tf_contraN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel17))
+                    .addComponent(jd_fechaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jt_telefonoN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_correoN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(cb_generoF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,42 +243,56 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setText("No tiene usuario? Aprete aqui para crear uno nuevo!");
+
+        jButton1.setText("Nuevo Usuario");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(pf_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(288, 288, 288)
+                            .addComponent(tf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(255, 255, 255)
-                        .addComponent(jLabel1))
+                        .addGap(341, 341, 341)
+                        .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_usuario)
-                            .addComponent(pf_contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(243, 243, 243)
+                        .addGap(338, 338, 338)
                         .addComponent(bt_login))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addComponent(jLabel2)))
-                .addContainerGap(400, Short.MAX_VALUE))
+                        .addGap(348, 348, 348)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(234, 234, 234)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(317, 317, 317)
+                        .addComponent(jButton1)))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(pf_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(27, 27, 27)
                 .addComponent(bt_login)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jLabel13)
+                .addGap(30, 30, 30)
+                .addComponent(jButton1)
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         jt_panel.addTab("Log in", jPanel1);
@@ -237,7 +367,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                                 .addComponent(jd_fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
                             .addComponent(jButton2)))
                     .addComponent(tf_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(434, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,9 +437,15 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             jt_tabla1.getColumnModel().getColumn(3).setHeaderValue("Precio");
         }
 
-        jButton3.setText("Modificar");
+        bt_modificar.setText("Modificar");
 
-        jButton4.setText("Eliminar");
+        bt_eliminar.setText("Eliminar");
+
+        cb_libros1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_libros1ItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -318,38 +454,51 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(119, 119, 119)
+                        .addComponent(bt_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(170, 170, 170)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bt_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
+                        .addGap(38, 38, 38)
+                        .addComponent(cb_libros1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addGap(47, 47, 47)
+                .addComponent(cb_libros1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(147, Short.MAX_VALUE))
+                    .addComponent(bt_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(113, 113, 113))
         );
 
         jt_panel.addTab("Modificar Libros", jPanel3);
+
+        jScrollPane2.setViewportView(jl_favoritos);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 765, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(184, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jt_panel.addTab("Libros por Genero favorito", jPanel5);
@@ -386,7 +535,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
                             .addComponent(cb_libros, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,9 +544,9 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cb_libros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         jt_panel.addTab("Otras acciones", jPanel4);
@@ -406,10 +555,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jt_panel)
-                .addContainerGap())
+            .addComponent(jt_panel)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,10 +575,12 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         String usuario,contra;
         usuario=tf_usuario.getText();
         contra=pf_contraseña.getText();
+        int pos=0;
         for (int i = 0; i < users.size(); i++) {
             if(users.get(i).getUsuario().equals(usuario) && users.get(i).getContraseña().equals(contra))
             {
                 login=true;
+                pos=i;
                 break;
             }
             else
@@ -453,6 +601,14 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Error, el usuario o la contrasena es incorrecta");
             jt_panel.setEnabled(login);
+        }
+        DefaultListModel dl= new DefaultListModel();
+            for (int i = 0; i < libros.size(); i++) {
+            if(libros.get(i).getGenero().equals(users.get(pos).getFavorito()))
+            {
+                dl.addElement(libros.get(i));
+                jl_favoritos.setModel(dl);
+            }
         }
         
     }//GEN-LAST:event_bt_loginMouseClicked
@@ -476,10 +632,18 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         //puntaje=Integer.parseInt(js_puntaje.get);
         precio=Integer.parseInt(tf_precio.getText());
         Libros l=new Libros(titulo,genero,0,0,descripcion,precio,fecha,autor);
+        libros.add(l);
         JOptionPane.showMessageDialog(this, "El libro se agrego exitosamente");
         DefaultComboBoxModel dc= (DefaultComboBoxModel) cb_libros.getModel();
+        DefaultComboBoxModel cb= (DefaultComboBoxModel) cb_libros1.getModel();
         dc.addElement(l);
+        cb.addElement(l);
+        cb_libros1.setModel(cb);
         cb_libros.setModel(dc);
+        DefaultListModel dl= new DefaultListModel();
+        dl.addElement(l);
+        jl_favoritos.setModel(dl);
+
         
         
     }//GEN-LAST:event_jButton2MouseClicked
@@ -500,6 +664,41 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             jt_buscar.setModel(modelo);
         }
     }//GEN-LAST:event_cb_librosItemStateChanged
+
+    private void cb_libros1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_libros1ItemStateChanged
+        // TODO add your handling code here:
+        if(evt.getStateChange()==2)
+        {
+            Libros s=(Libros) cb_libros1.getSelectedItem();
+            Object[] newrow= {
+                s.getTitulo(),
+                s.getAutor(),
+                s.getDescripcion(),
+                s.getPrecio()
+            };
+            DefaultTableModel modelo=(DefaultTableModel) jt_tabla1.getModel();
+            modelo.addRow(newrow);
+            jt_tabla1.setModel(modelo);
+        }
+    }//GEN-LAST:event_cb_libros1ItemStateChanged
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        String usuario,contra,correo,fav;
+        Date fecha;
+        int telefono;
+        
+        usuario=tf_usuarioN.getText();
+        contra=tf_contraN.getText();
+        fecha=jd_fechaN.getDate();
+        telefono=Integer.parseInt(jt_telefonoN.getText());
+        correo=tf_correoN.getText();
+        fav=cb_generoF.getSelectedItem().toString();
+        Personas p=new Personas(usuario,contra,fecha,telefono,correo,fav);
+        users.add(p);
+        JOptionPane.showMessageDialog(this, "El usuario se creo exitosamente");
+        
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -538,17 +737,30 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_eliminar;
     private javax.swing.JButton bt_login;
+    private javax.swing.JButton bt_modificar;
     private javax.swing.JComboBox<String> cb_genero;
+    private javax.swing.JComboBox<String> cb_generoF;
     private javax.swing.JComboBox<String> cb_libros;
+    private javax.swing.JComboBox<String> cb_libros1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -562,19 +774,26 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private com.toedter.calendar.JDateChooser jd_fecha;
+    private com.toedter.calendar.JDateChooser jd_fechaN;
+    private javax.swing.JList<String> jl_favoritos;
     private javax.swing.JSpinner js_copias;
     private javax.swing.JSpinner js_edicion;
     private javax.swing.JSpinner js_puntaje;
     private javax.swing.JTable jt_buscar;
     private javax.swing.JTabbedPane jt_panel;
     private javax.swing.JTable jt_tabla1;
+    private javax.swing.JTextField jt_telefonoN;
     private javax.swing.JPasswordField pf_contraseña;
     private javax.swing.JTextField tf_autor;
+    private javax.swing.JTextField tf_contraN;
+    private javax.swing.JTextField tf_correoN;
     private javax.swing.JTextField tf_descropcion;
     private javax.swing.JTextField tf_precio;
     private javax.swing.JTextField tf_titulo;
     private javax.swing.JTextField tf_usuario;
+    private javax.swing.JTextField tf_usuarioN;
     // End of variables declaration//GEN-END:variables
 }
