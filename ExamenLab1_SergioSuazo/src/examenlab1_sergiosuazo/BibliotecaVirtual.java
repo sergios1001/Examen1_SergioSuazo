@@ -20,6 +20,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
 
         static ArrayList<Personas> users=new ArrayList();
         static ArrayList<Libros> libros=new ArrayList();
+        static Personas usuario_actual;
         static boolean login=false;
     /**
      * Creates new form BibliotecaVirtual
@@ -246,6 +247,11 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jLabel13.setText("No tiene usuario? Aprete aqui para crear uno nuevo!");
 
         jButton1.setText("Nuevo Usuario");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -595,6 +601,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         if(login)
         {
             JOptionPane.showMessageDialog(this,"Bienvenido " +usuario);
+            usuario_actual=users.get(pos);
             jt_panel.setEnabled(login);
         }
         else
@@ -620,29 +627,41 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        String titulo,autor,descripcion,genero;
-        Date fecha;
-        int puntaje, edicion, copias,precio;
         
-        titulo=tf_titulo.getText();
-        autor=tf_autor.getText();
-        descripcion=tf_descropcion.getText();
-        genero=cb_genero.getSelectedItem().toString();
-        fecha=jd_fecha.getDate();
-        //puntaje=Integer.parseInt(js_puntaje.get);
-        precio=Integer.parseInt(tf_precio.getText());
-        Libros l=new Libros(titulo,genero,0,0,descripcion,precio,fecha,autor);
-        libros.add(l);
-        JOptionPane.showMessageDialog(this, "El libro se agrego exitosamente");
-        DefaultComboBoxModel dc= (DefaultComboBoxModel) cb_libros.getModel();
-        DefaultComboBoxModel cb= (DefaultComboBoxModel) cb_libros1.getModel();
-        dc.addElement(l);
-        cb.addElement(l);
-        cb_libros1.setModel(cb);
-        cb_libros.setModel(dc);
-        DefaultListModel dl= new DefaultListModel();
-        dl.addElement(l);
-        jl_favoritos.setModel(dl);
+        if(usuario_actual.getUsuario().equals("Diego"))
+        {
+            String titulo,autor,descripcion,genero;
+            Date fecha;
+            int puntaje, edicion, copias,precio;
+
+            titulo=tf_titulo.getText();
+            autor=tf_autor.getText();
+            descripcion=tf_descropcion.getText();
+            genero=cb_genero.getSelectedItem().toString();
+            fecha=jd_fecha.getDate();
+            //puntaje=Integer.parseInt(js_puntaje.get);
+            precio=Integer.parseInt(tf_precio.getText());
+            Libros l=new Libros(titulo,genero,0,0,descripcion,precio,fecha,autor);
+            libros.add(l);
+            JOptionPane.showMessageDialog(this, "El libro se agrego exitosamente");
+            DefaultComboBoxModel dc= (DefaultComboBoxModel) cb_libros.getModel();
+            DefaultComboBoxModel cb= (DefaultComboBoxModel) cb_libros1.getModel();
+            dc.addElement(l);
+            cb.addElement(l);
+            cb_libros1.setModel(cb);
+            cb_libros.setModel(dc);
+            if(usuario_actual.getFavorito().equals(genero))
+            {
+                DefaultListModel dl= new DefaultListModel();
+                dl.addElement(l);
+                jl_favoritos.setModel(dl);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "No tiene permiso de realizar esa accion");
+        }
+        
 
         
         
@@ -697,8 +716,14 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         Personas p=new Personas(usuario,contra,fecha,telefono,correo,fav);
         users.add(p);
         JOptionPane.showMessageDialog(this, "El usuario se creo exitosamente");
+        jDialog1.setVisible(false);
         
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        jDialog1.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
