@@ -135,6 +135,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jt_buscar = new javax.swing.JTable();
         cb_libros = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         jLabel14.setText("Nuevo Usuario");
 
@@ -446,6 +447,11 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         bt_modificar.setText("Modificar");
 
         bt_eliminar.setText("Eliminar");
+        bt_eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_eliminarMouseClicked(evt);
+            }
+        });
 
         cb_libros1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -527,6 +533,8 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
 
         jLabel12.setText("Libro");
 
+        jLabel21.setText("Buscar informacion sobre un libro");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -539,20 +547,25 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(cb_libros, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(230, 230, 230)
+                                .addComponent(jLabel21))
+                            .addComponent(cb_libros, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))))
                 .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel12)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cb_libros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(51, 51, 51)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         jt_panel.addTab("Otras acciones", jPanel4);
@@ -725,6 +738,17 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jDialog1.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void bt_eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_eliminarMouseClicked
+        // TODO add your handling code here:
+                if(jt_tabla1.getSelectedRow()>=0)
+        {
+            DefaultTableModel modelo=(DefaultTableModel) jt_tabla1.getModel();
+            modelo.removeRow(jt_tabla1.getSelectedRow());
+            jt_tabla1.setModel(modelo);
+            libros.remove(jt_tabla1.getSelectedRow());
+        }
+    }//GEN-LAST:event_bt_eliminarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -786,6 +810,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
